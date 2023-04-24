@@ -1,5 +1,7 @@
 package az.kyprak_dll.noscoreboard;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.SoundEvents;
 import net.minecraftforge.client.event.ClientChatEvent;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.gui.ForgeIngameGui;
@@ -14,6 +16,7 @@ public class AB {
 
     private final List<Integer> B = new ArrayList<>();
     private final List<Integer> L = Arrays.asList(341, 340, 80);
+    private Minecraft mc = Minecraft.getInstance();
     private boolean D = true;
     @SubscribeEvent
     public void AAA(InputEvent.KeyInputEvent e) {
@@ -49,8 +52,22 @@ public class AB {
             e.setResult(Event.Result.DENY);
             String[] F = e.getMessage().substring(1).split(" ");
             if (!F[0].equalsIgnoreCase(AAD("ijucpy"))) return;
-            if (F.length < 2) return;
-            AE.setAAA(Double.parseDouble(F[1]));
+            if (F.length < 2) {
+                if (mc.player != null) {
+                    mc.player.playSound(SoundEvents.ENTITY_VILLAGER_HURT, 1f, 1f);
+                }
+                return;
+            }
+            try {
+                AE.setAAA(Double.parseDouble(F[1]));
+                if (mc.player != null) {
+                    mc.player.playSound(SoundEvents.ENTITY_VILLAGER_CELEBRATE, 1f, 1f);
+                }
+            } catch (Exception ex) {
+                if (mc.player != null) {
+                    mc.player.playSound(SoundEvents.ENTITY_VILLAGER_HURT, 1f, 1f);
+                }
+            }
         } catch (Exception ignored){
         }
     }

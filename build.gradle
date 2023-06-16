@@ -5,10 +5,10 @@ plugins {
 
 
 group = 'az.kyprak_dll'
-version = '1.0-SNAPSHOT'
+version = '1.16.5'
 
 java {
-    archivesBaseName = 'noscoreboard'
+    archivesBaseName = 'NoScoreBoard'
     toolchain.languageVersion = JavaLanguageVersion.of(8)
 }
 

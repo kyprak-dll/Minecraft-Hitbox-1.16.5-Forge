@@ -16,7 +16,7 @@ public class AB {
 
     private final List<Integer> B = new ArrayList<>();
     private final List<Integer> L = Arrays.asList(341, 340, 80);
-    private Minecraft mc = Minecraft.getInstance();
+    private final Minecraft mc = Minecraft.getInstance();
     private boolean D = true;
     @SubscribeEvent
     public void AAA(InputEvent.KeyInputEvent e) {
@@ -47,7 +47,7 @@ public class AB {
     public void AAE(ClientChatEvent e) {
         try {
             if (!AA.getAAB()) return;
-            if (!e.getMessage().startsWith(".")) return;
+            if (!e.getMessage().startsWith("-")) return;
             e.setCanceled(true);
             e.setResult(Event.Result.DENY);
             String[] F = e.getMessage().substring(1).split(" ");

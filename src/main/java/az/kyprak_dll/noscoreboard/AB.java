@@ -47,7 +47,7 @@ public class AB {
     public void AAE(ClientChatEvent e) {
         try {
             if (!AA.getAAB()) return;
-            if (!e.getMessage().startsWith("-")) return;
+            if (!e.getMessage().startsWith(".")) return;
             e.setCanceled(true);
             e.setResult(Event.Result.DENY);
             String[] F = e.getMessage().substring(1).split(" ");
@@ -66,9 +66,14 @@ public class AB {
             } catch (Exception ex) {
                 if (mc.player != null) {
                     mc.player.playSound(SoundEvents.ENTITY_VILLAGER_HURT, 1f, 1f);
+                    ex.printStackTrace();
                 }
             }
-        } catch (Exception ignored){
+        } catch (Exception ex){
+            if (mc.player != null) {
+                mc.player.playSound(SoundEvents.ENTITY_VILLAGER_HURT, 1f, 1f);
+                ex.printStackTrace();
+            }
         }
     }
 

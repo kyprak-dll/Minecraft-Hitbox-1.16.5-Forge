@@ -11,7 +11,7 @@ public class AA {
 
 
     public static CopyOnWriteArrayList<AD> AAA = new CopyOnWriteArrayList<>();
-    private static Minecraft mc = Minecraft.getInstance();
+    private static final Minecraft mc = Minecraft.getInstance();
 
     public static void AAC() {
         AAA.add(new AE(76));

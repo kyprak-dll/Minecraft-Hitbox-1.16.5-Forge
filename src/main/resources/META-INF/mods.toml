@@ -31,10 +31,8 @@ displayName = "NoScoreBoard" #mandatory
 # A text field displayed in the mod UI
 #credits="Thanks for this example mod goes to Java" #optional
 # A text field displayed in the mod UI
-authors = "MrWieselOH" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description = '''
-Мод позволяет убрать таблицу справа для удобства
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.noscoreboard]] #optional

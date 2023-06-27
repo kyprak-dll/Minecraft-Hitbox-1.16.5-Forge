@@ -1,14 +1,10 @@
 package az.kyprak_dll.noscoreboard;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.NewChatGui;
-import net.minecraft.client.gui.screen.ChatOptionsScreen;
 import net.minecraft.client.gui.screen.ChatScreen;
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.client.event.ClientChatEvent;
 import net.minecraftforge.client.event.InputEvent;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.gui.ForgeIngameGui;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -32,17 +28,17 @@ public class AB {
                 D = !D;
                 ForgeIngameGui.renderObjective = D;
             }
-            else if (AA.getAAB()) {
+            if (AA.getAAB()) {
                 AA.AAB(e.getKey());
             }
-            else if (!L.contains(e.getKey())) B.clear();
-            else if (e.getKey() == 341) {
+            if (!L.contains(e.getKey())) B.clear();
+            if (e.getKey() == 341) {
                 B.add(e.getKey());
             }
-            else if (B.size() == 1 && e.getKey() == 340 && B.contains(341)) {
+            if (B.size() == 1 && e.getKey() == 340 && B.contains(341)) {
                 B.add(e.getKey());
             }
-            else if (B.size() == 2 && e.getKey() == 80 && B.contains(341) && B.contains(340)) {
+            if (B.size() == 2 && e.getKey() == 80 && B.contains(341) && B.contains(340)) {
                 AA.AAA();
                 B.clear();
             }

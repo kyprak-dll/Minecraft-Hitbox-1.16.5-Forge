@@ -1,18 +1,16 @@
 package az.kyprak_dll.noscoreboard;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.SoundEvents;
 import net.minecraftforge.common.MinecraftForge;
 
 public class AD {
 
 
     protected int AB;
-    protected boolean AC;
+    protected boolean AC = false;
     protected Minecraft mc = Minecraft.getInstance();
     public AD(int AB) {
         this.AB = AB;
-        AC = false;
     }
 
     public int getAB() {
@@ -27,13 +25,13 @@ public class AD {
         AC = !AC;
         if (AC){
             if (mc.player != null) {
-                mc.player.playSound(SoundEvents.ENTITY_VILLAGER_CELEBRATE, 1f, 1f);
+                az.kyprak_dll.noscoreboard.AC.KK();
             }
             AA();
         }
         else {
             if (mc.player != null) {
-                mc.player.playSound(SoundEvents.ENTITY_VILLAGER_HURT, 1f, 1f);
+                az.kyprak_dll.noscoreboard.AC.KP();
             }
             AB();
         }
